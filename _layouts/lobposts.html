@@ -1,0 +1,62 @@
+---
+layout: page
+---
+
+<div class="row">
+    <div class="col">
+        {% if page.img %}
+        <img src="{{ site.baseurl }}{{ page.img }}">
+        {% endif %}
+        <h1>{{ page.title }}</h1>
+        <p>
+            Published {{ page.date | date: "%Y-%m-%d" }}
+            {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="card">
+            <header>
+                <h5>Title</h5>
+                <p>{{ page.subject.title }}</p>
+            </header>
+
+            {% if page.subject.cover %}
+            <img src="{{ site.baseurl }}{{ page.subject.cover }}">
+            {% endif %}
+            
+            {% for creator in page.subject.by %}
+            <h5>{{ creator.title }}</h5>
+            <p>{{ creator.name }}</p>
+            {% endfor %}
+
+            {% if page.subject.released %}
+            <h5>📅Released</h5>
+            <p>{{ page.subject.released }}</p>
+            {% endif %}
+
+            {% if page.subject.ISBN %}
+            <h5>📕ISBN</h5>
+            <p>{{ page.subject.ISBN }}</p>
+            {% endif %}
+
+            
+        </div>
+    </div>
+    <div class="col-6">
+        {{ content }}
+    </div>
+    {% if page.subject.tldr %}
+    <div class="col-3">
+        <div class="card">
+            <details>
+                <summary><b>tl;dr</b></summary>
+                <p>{{ page.subject.tldr }}</p>
+            </details>
+        </div>
+    </div>
+    {% endif %}
+</div>
