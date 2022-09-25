@@ -1,0 +1,6 @@
+- name: Instagram
+  link: https://www.instagram.com/lukeocomedy/
+  icon: https://icongr.am/feather/instagram.svg?size=32&color=currentColor
+- name: Email
+  link: mailto:luke@ossevoort.xyz
+  icon: https://icongr.am/feather/mail.svg?size=32&color=currentColor

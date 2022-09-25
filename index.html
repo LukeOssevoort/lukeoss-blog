@@ -19,3 +19,23 @@ layout: home
         <a href="{{ site.baseurl }}/about/" class="button primary">Read More</a>
     </div>
 </div>
+
+<hr>
+
+<div class="row is-center">
+    <div class="col-12 is-center">
+        <h3>Contact me</h3>
+    </div>
+    {% for social in site.data.socials %}
+    <div class="col-3 is-center">
+        <a href="{{ social.link }}">
+            <img src="{{ social.icon }}">
+        </a>
+        <a href="{{ social.link }}">
+            <h4>{{ social.name }}</h4>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
